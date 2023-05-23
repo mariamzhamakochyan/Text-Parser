@@ -12,5 +12,3 @@ class Word:
         lowercase = self.lowercase_word()
         if lowercase in dictionary:
             return lowercase
-        else:
-            return self.word
