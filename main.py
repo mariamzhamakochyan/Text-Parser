@@ -41,4 +41,4 @@ while True:
     if search_result:
         print(f"The word '{keyword}' is found in files: {', '.join(search_result)}")
     else:
-        print(f"The word '{keyword}' is not found.")
+        print(f"The word '{keyword}' is not found. ")
