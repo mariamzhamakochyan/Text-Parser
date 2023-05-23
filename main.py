@@ -34,7 +34,7 @@ def search_word(keyword):
 
 word_db()
 while True:
-    keyword = input("Enter a word to search, or press 'return' to quit: ")
+    keyword = input("Enter a word to search, or press 'Enter' to quit: ")
     if keyword == "":
         break
     search_result = search_word(keyword)
