@@ -13,5 +13,5 @@ for word in clean_words:
     else:
         not_found.append(word)
 
-print(normalized_words)
-print(not_found)
+# print(normalized_words)
+# print(not_found)
