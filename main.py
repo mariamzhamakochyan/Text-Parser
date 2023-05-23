@@ -1,7 +1,7 @@
 from src.word import Word
 from src.text import Text
 
-def parse_files():
+def word_db():
     files = ["resources/1.txt", "resources/2.txt"]
     word_dict = {}
 
@@ -9,8 +9,8 @@ def parse_files():
         with open(file_name, "r") as file:
             content = file.read().split()
             for word in content:
-                word_obj = Word(word)
-                lowercase_word = word_obj.lowercase_word()
+                word_ = Word(word)
+                lowercase_word = word_.lowercase_word()
                 if lowercase_word in word_dict:
                     if file_name not in word_dict[lowercase_word]:
                         word_dict[lowercase_word].append(file_name)
@@ -32,4 +32,13 @@ def search_word(keyword):
     return []
 
 
-
+word_db()
+while True:
+    keyword = input("Enter a word to search, or press 'return' to quit: ")
+    if keyword == "":
+        break
+    search_result = search_word(keyword)
+    if search_result:
+        print(f"The word '{keyword}' is found in files: {', '.join(search_result)}")
+    else:
+        print(f"The word '{keyword}' is not found.")
