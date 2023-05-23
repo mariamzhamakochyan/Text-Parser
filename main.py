@@ -5,17 +5,17 @@ def word_db():
     files = ["resources/1.txt", "resources/2.txt"]
     word_dict = {}
 
-    for file_name in files:
-        with open(file_name, "r") as file:
+    for file_ in files:
+        with open(file_, "r") as file:
             content = file.read().split()
             for word in content:
                 word_ = Word(word)
                 lowercase_word = word_.lowercase_word()
                 if lowercase_word in word_dict:
-                    if file_name not in word_dict[lowercase_word]:
-                        word_dict[lowercase_word].append(file_name)
+                    if file_ not in word_dict[lowercase_word]:
+                        word_dict[lowercase_word].append(file_)
                 else:
-                    word_dict[lowercase_word] = [file_name]
+                    word_dict[lowercase_word] = [file_]
 
     with open("db.txt", "w") as output_file:
         for word, file_list in word_dict.items():
